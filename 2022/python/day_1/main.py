@@ -35,8 +35,8 @@ def solve(item_list):
 
 
 def main():    
-    list = read_input().splitlines()
-    elf_items = solve(list)
+    items_list = read_input().splitlines()
+    elf_items = solve(items_list)
    
     # Part 1
     print(f'Part 1: {max(elf_items)}')
