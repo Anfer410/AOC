@@ -70,6 +70,10 @@ def part_1(rounds_list):
             player_game = 'Loss'
 
         player_points += game[player]['Points'] + game[player_game]['Points']
+        print(f'{opponent} vs {player}')
+        
+        print(f"{game[player]['Points']} + {game[player_game]['Points']} = {game[player]['Points'] + game[player_game]['Points']}")
+    
     end_time = time.perf_counter()
     print(f'Part 1 execution time: {end_time - start_time} seconds')
     
@@ -96,7 +100,7 @@ def part_2(rounds_list):
         player_points += round_points
         
     end_time = time.perf_counter()
-    print(f'Part 1 execution time: {end_time - start_time} seconds')
+    print(f'Part 2 execution time: {end_time - start_time} seconds')
     
     return player_points
 
@@ -104,8 +108,8 @@ def part_2(rounds_list):
 def main():
     rounds_list = read_input().splitlines() 
     
-    print(f'Part_1: {part_1(rounds_list)}')
-    print(f'Part_2: {part_2(rounds_list)}')
+    print(f'Part 1: {part_1(rounds_list)}')
+    print(f'Part 2: {part_2(rounds_list)}')
 
 
 if __name__ == '__main__':
