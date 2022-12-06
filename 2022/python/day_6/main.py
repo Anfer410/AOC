@@ -14,7 +14,7 @@ def read_input():
     return file
 
 
-# Brutforce...
+# Bruteforce...
 def part_1(signal):
     start = time.perf_counter()
     for i in range(len(signal) - 4):
@@ -41,9 +41,12 @@ def find_start_of_message_marker(signal, size):
         
         # check characters
         for j in range(i,i+size):
+            # while buffer is smaler than size do
             if len(buffer) < size and not found :
+                # look for duplicates
                 if signal[j] not in buffer:
                     buffer.append(signal[j])
+                    # check buffer size
                     if len(buffer) == size:
                         print(f'Handshake till {j}, message start at: {j+1}')
                         found = True
@@ -51,9 +54,6 @@ def find_start_of_message_marker(signal, size):
                 else: 
                     # print(f'Duplicate found in range {i}-{j}')
                     break 
-            elif not found:
-                # print(f'Not found in {i}-{j} range')
-                break
     
     end = time.perf_counter()
     print(f'Task took: {end - start} seconds')
@@ -68,9 +68,10 @@ def main():
     # part_1(signal)
 
     # Part 1
-    find_start_of_message_marker(signal, 4)
+    find_start_of_message_marker(signal, 4)  #1343
     # Part 2
-    find_start_of_message_marker(signal, 14)
+    find_start_of_message_marker(signal, 14)  #2193
+
 
 
 if __name__ == '__main__':
