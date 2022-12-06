@@ -51,9 +51,11 @@ function part_2(rucksack, letters_priorities){
     console.log(rucksack_sum)
 }
 
+let input_data = fs.readFileSync('./day_3/input.txt', 'utf8');
 
 let alph = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-let rucksack = test_data.split('\n')
+// let rucksack = test_data.split('\n')
+let rucksack = input_data.split('\r\n')
 
 part_1(rucksack, alph)
 part_2(rucksack, alph)
